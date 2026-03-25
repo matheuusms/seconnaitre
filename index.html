@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Landing Page du projet Se Connaître - Le Job Entrepreneur" />
+  <title>Le Job Entrepreneur | Se Connaître</title>
+  <style>
+    :root {
+      --midnight-blue: #1a202c;
+      --pure-white: #ffffff;
+      --electric-blue: #3182ce;
+      --text-soft: #dbe5f3;
+      --card-bg: rgba(255, 255, 255, 0.11);
+      --card-border: rgba(255, 255, 255, 0.22);
+      --shadow-soft: 0 12px 30px rgba(15, 23, 42, 0.25);
+      --radius-lg: 20px;
+      --radius-md: 14px;
+      --max-width: 1120px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html,
+    body {
+      width: 100%;
+      min-height: 100%;
+    }
+
+    body {
+      font-family: "Inter", "Roboto", "Segoe UI", sans-serif;
+      color: var(--pure-white);
+      line-height: 1.6;
+      background:
+        radial-gradient(circle at 12% 16%, rgba(49, 130, 206, 0.34), transparent 34%),
+        radial-gradient(circle at 85% 8%, rgba(255, 255, 255, 0.08), transparent 28%),
+        linear-gradient(140deg, #101826 0%, var(--midnight-blue) 50%, #0f172a 100%);
+      background-attachment: fixed;
+      padding: 18px;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: grid;
+      gap: 18px;
+    }
+
+    .glass {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-soft);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+
+    .header {
+      padding: 28px 24px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .header::before {
+      content: "";
+      position: absolute;
+      top: -60px;
+      right: -60px;
+      width: 190px;
+      height: 190px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(49, 130, 206, 0.35), transparent 68%);
+      filter: blur(6px);
+      pointer-events: none;
+    }
+
+    .header h1 {
+      font-size: clamp(1.8rem, 4vw, 2.7rem);
+      font-weight: 700;
+      letter-spacing: 0.4px;
+      line-height: 1.2;
+      max-width: 18ch;
+    }
+
+    .subtitle {
+      margin-top: 10px;
+      font-size: clamp(0.95rem, 2.2vw, 1.08rem);
+      color: var(--text-soft);
+    }
+
+    .hero {
+      padding: clamp(24px, 4vw, 44px);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto auto -120px -110px;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(49, 130, 206, 0.42), transparent 70%);
+      filter: blur(8px);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .hero p {
+      position: relative;
+      z-index: 1;
+      font-size: clamp(1.35rem, 4.2vw, 2.2rem);
+      font-weight: 600;
+      line-height: 1.25;
+      max-width: 24ch;
+      text-wrap: balance;
+    }
+
+    .hero strong {
+      color: #8dc8ff;
+      font-weight: 700;
+    }
+
+    .section {
+      padding: 22px;
+    }
+
+    .section h2 {
+      font-size: clamp(1.15rem, 3vw, 1.5rem);
+      margin-bottom: 14px;
+      color: #e8f2ff;
+      font-weight: 600;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .card {
+      border-radius: var(--radius-md);
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      padding: 18px;
+      box-shadow: 0 8px 20px rgba(2, 8, 23, 0.12);
+      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+      min-height: 170px;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(49, 130, 206, 0.75);
+      box-shadow: 0 14px 24px rgba(2, 8, 23, 0.2);
+    }
+
+    .card h3 {
+      font-size: 1.05rem;
+      color: #bee3f8;
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+
+    .card p {
+      color: #edf2f7;
+      font-size: 0.96rem;
+    }
+
+    .reflection {
+      padding: clamp(20px, 3vw, 30px);
+    }
+
+    .reflection p {
+      color: #edf2f7;
+      max-width: 70ch;
+      font-size: clamp(0.98rem, 2vw, 1.06rem);
+    }
+
+    .footer {
+      text-align: center;
+      color: #d4deea;
+      font-size: 0.92rem;
+      padding: 4px 10px 14px;
+    }
+
+    @media (max-width: 880px) {
+      .cards {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 620px) {
+      body {
+        padding: 12px;
+      }
+
+      .container {
+        gap: 12px;
+      }
+
+      .header,
+      .hero,
+      .section,
+      .reflection {
+        padding: 18px;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .card {
+        min-height: auto;
+      }
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      .reveal {
+        opacity: 0;
+        transform: translateY(12px);
+        animation: reveal 680ms ease forwards;
+      }
+
+      .delay-1 {
+        animation-delay: 120ms;
+      }
+
+      .delay-2 {
+        animation-delay: 230ms;
+      }
+
+      .delay-3 {
+        animation-delay: 340ms;
+      }
+
+      @keyframes reveal {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="container" aria-label="Landing Page Le Job Entrepreneur">
+    <header class="header glass reveal">
+      <h1>Le Job Entrepreneur</h1>
+      <p class="subtitle">Élective Se Connaître | Centrale Lille</p>
+    </header>
+
+    <section class="hero glass reveal delay-1" aria-label="Phrase d'accroche">
+      <p>L'entrepreneuriat commence par la <strong>découverte de soi-même</strong>.</p>
+    </section>
+
+    <section class="section glass reveal delay-2" aria-label="Competences">
+      <h2>Compétences clés</h2>
+      <div class="cards">
+        <article class="card">
+          <h3>Autonomie</h3>
+          <p>Piloter ses projets avec détermination.</p>
+        </article>
+
+        <article class="card">
+          <h3>Intraprenariat</h3>
+          <p>Innover et créer de la valeur au sein d'une organisation.</p>
+        </article>
+
+        <article class="card">
+          <h3>Vision Stratégique</h3>
+          <p>Aligner ses forces personnelles avec les opportunités du marché.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="reflection glass reveal delay-3" aria-label="Réflexion">
+      <h2>Réflexion</h2>
+      <p>
+        Le Job Entrepreneur n'est pas juste un métier, c'est une posture de vie.
+        C'est la capacité à se connaître, à miser sur ses forces et à transformer
+        cette clarté intérieure en projets à impact, dans un monde en mouvement.
+      </p>
+    </section>
+
+    <footer class="footer">
+      Projet réalisé par Matheus - 2026
+    </footer>
+  </main>
+</body>
+</html>
