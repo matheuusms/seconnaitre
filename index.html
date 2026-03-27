@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Le Job Entrepreneur | Se Connaître – Centrale Lille</title>
+  <title>Forum : Job Entrepreneur | Se Connaître – Centrale Lille</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -16,432 +16,822 @@
     }
 
     :root {
-      --navy:   #1a202c;
-      --white:  #ffffff;
-      --blue:   #3182ce;
-      --blue-light: #4299e1;
-      --blue-dark:  #2b6cb0;
-      --glass-bg: rgba(255, 255, 255, 0.08);
-      --glass-border: rgba(255, 255, 255, 0.18);
-      --shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-      --radius: 16px;
-      --radius-sm: 8px;
+      --navy:        #1a202c;
+      --navy-light:  #2d3748;
+      --white:       #ffffff;
+      --blue:        #3182ce;
+      --blue-light:  #4299e1;
+      --blue-dark:   #2b6cb0;
+      --blue-pale:   #ebf8ff;
+      --border:      rgba(255, 255, 255, 0.12);
+      --shadow-sm:   0 2px 8px rgba(0, 0, 0, 0.25);
+      --shadow:      0 8px 32px rgba(0, 0, 0, 0.3);
+      --radius:      14px;
+      --radius-sm:   8px;
     }
 
-    html {
-      scroll-behavior: smooth;
-    }
+    html { scroll-behavior: smooth; }
 
     body {
       font-family: 'Inter', sans-serif;
       background-color: var(--navy);
       color: var(--white);
-      line-height: 1.6;
+      line-height: 1.65;
       -webkit-font-smoothing: antialiased;
     }
 
     /* ── Utility ── */
     .container {
       width: 100%;
-      max-width: 900px;
+      max-width: 860px;
       margin: 0 auto;
       padding: 0 20px;
     }
 
-    /* ── Header ── */
-    header {
-      background: rgba(26, 32, 44, 0.85);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--glass-border);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      padding: 18px 0;
-    }
+    .section { padding: 72px 0; }
 
-    header .container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 4px;
-      text-align: center;
-    }
-
-    header h1 {
-      font-size: clamp(1.3rem, 4vw, 1.8rem);
-      font-weight: 800;
-      letter-spacing: -0.5px;
-      color: var(--white);
-    }
-
-    header h1 span {
-      color: var(--blue);
-    }
-
-    header p.subtitle {
-      font-size: 0.8rem;
-      font-weight: 400;
-      color: rgba(255, 255, 255, 0.55);
-      letter-spacing: 0.8px;
-      text-transform: uppercase;
-    }
-
-    /* ── Hero ── */
-    .hero {
-      padding: 90px 0 80px;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: -150px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 600px;
-      height: 600px;
-      background: radial-gradient(circle, rgba(49, 130, 206, 0.18) 0%, transparent 70%);
-      pointer-events: none;
-    }
-
-    .hero-tag {
+    .section-label {
       display: inline-block;
       background: rgba(49, 130, 206, 0.15);
-      border: 1px solid rgba(49, 130, 206, 0.4);
+      border: 1px solid rgba(49, 130, 206, 0.35);
       color: var(--blue-light);
-      font-size: 0.75rem;
-      font-weight: 600;
-      letter-spacing: 1.2px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 1.4px;
       text-transform: uppercase;
-      padding: 6px 16px;
+      padding: 5px 14px;
       border-radius: 100px;
-      margin-bottom: 28px;
+      margin-bottom: 18px;
     }
 
-    .hero h2 {
-      font-size: clamp(1.8rem, 6vw, 3rem);
+    .section-title {
+      font-size: clamp(1.5rem, 4vw, 2.1rem);
       font-weight: 800;
-      line-height: 1.2;
-      letter-spacing: -1px;
-      max-width: 700px;
-      margin: 0 auto 24px;
+      letter-spacing: -0.5px;
+      margin-bottom: 10px;
     }
 
-    .hero h2 em {
-      font-style: normal;
-      color: var(--blue);
-    }
-
-    .hero p.hero-desc {
-      font-size: clamp(0.95rem, 2.5vw, 1.1rem);
-      color: rgba(255, 255, 255, 0.65);
-      max-width: 520px;
-      margin: 0 auto 36px;
-      font-weight: 300;
-    }
-
-    .hero-cta {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: var(--blue);
-      color: var(--white);
+    .section-sub {
+      color: rgba(255, 255, 255, 0.5);
       font-size: 0.95rem;
-      font-weight: 600;
-      padding: 14px 32px;
-      border-radius: 100px;
-      text-decoration: none;
-      box-shadow: 0 4px 20px rgba(49, 130, 206, 0.4);
-      transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+      margin-bottom: 44px;
     }
 
-    .hero-cta:hover {
-      background: var(--blue-dark);
-      transform: translateY(-2px);
-      box-shadow: 0 8px 28px rgba(49, 130, 206, 0.5);
-    }
-
-    .hero-cta svg {
-      width: 18px;
-      height: 18px;
-      flex-shrink: 0;
-    }
-
-    /* ── Divider ── */
     .divider {
-      width: 60px;
+      width: 48px;
       height: 3px;
       background: linear-gradient(90deg, var(--blue), var(--blue-light));
       border-radius: 2px;
-      margin: 0 auto 48px;
+      margin-bottom: 44px;
     }
 
-    /* ── Section title ── */
-    .section-title {
-      text-align: center;
-      margin-bottom: 48px;
+    /* ── NAV ── */
+    nav {
+      background: rgba(26, 32, 44, 0.92);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 200;
     }
 
-    .section-title h3 {
-      font-size: clamp(1.4rem, 4vw, 2rem);
-      font-weight: 700;
-      letter-spacing: -0.5px;
-      margin-bottom: 12px;
+    nav .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 14px;
+      padding-bottom: 14px;
+      gap: 16px;
     }
 
-    .section-title p {
-      color: rgba(255, 255, 255, 0.55);
+    nav .nav-brand {
       font-size: 0.95rem;
-      max-width: 480px;
-      margin: 0 auto;
+      font-weight: 700;
+      color: var(--white);
+      white-space: nowrap;
     }
 
-    /* ── Skills Section ── */
-    .skills {
-      padding: 60px 0 80px;
+    nav .nav-brand span { color: var(--blue); }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 4px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
     }
 
-    .cards-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 20px;
+    nav ul li a {
+      display: block;
+      color: rgba(255, 255, 255, 0.65);
+      text-decoration: none;
+      font-size: 0.8rem;
+      font-weight: 500;
+      padding: 6px 12px;
+      border-radius: 6px;
+      transition: color 0.2s, background 0.2s;
     }
 
-    .card {
-      background: var(--glass-bg);
-      border: 1px solid var(--glass-border);
-      border-radius: var(--radius);
-      padding: 32px 28px;
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      box-shadow: var(--shadow);
-      transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+    nav ul li a:hover {
+      color: var(--white);
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    /* ── HERO / ACCUEIL ── */
+    #accueil {
+      padding: 88px 0 80px;
+      text-align: center;
       position: relative;
       overflow: hidden;
     }
 
-    .card::after {
+    #accueil::before {
       content: '';
       position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 2px;
-      background: linear-gradient(90deg, var(--blue), var(--blue-light));
-      opacity: 0;
-      transition: opacity 0.25s;
+      top: -200px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 700px;
+      height: 700px;
+      background: radial-gradient(circle, rgba(49, 130, 206, 0.16) 0%, transparent 70%);
+      pointer-events: none;
     }
 
-    .card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 16px 48px rgba(0, 0, 0, 0.4);
-      border-color: rgba(49, 130, 206, 0.4);
+    #accueil .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(49, 130, 206, 0.12);
+      border: 1px solid rgba(49, 130, 206, 0.35);
+      color: var(--blue-light);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.8px;
+      padding: 7px 18px;
+      border-radius: 100px;
+      margin-bottom: 32px;
     }
 
-    .card:hover::after {
-      opacity: 1;
+    #accueil h1 {
+      font-size: clamp(2rem, 7vw, 3.4rem);
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -1.5px;
+      margin-bottom: 26px;
     }
 
-    .card-icon {
+    #accueil h1 span { color: var(--blue); }
+
+    #accueil .hero-text {
+      font-size: clamp(0.95rem, 2.5vw, 1.1rem);
+      color: rgba(255, 255, 255, 0.65);
+      max-width: 560px;
+      margin: 0 auto 14px;
+      font-weight: 300;
+    }
+
+    .event-info {
+      display: inline-flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 32px;
+    }
+
+    .event-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--navy-light);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 12px 20px;
+      font-size: 0.88rem;
+      font-weight: 500;
+    }
+
+    .event-chip .chip-icon { font-size: 1.1rem; }
+    .event-chip strong { color: var(--white); }
+    .event-chip .chip-label { color: rgba(255,255,255,0.5); font-size: 0.78rem; display: block; }
+
+    .scroll-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 40px;
+      color: var(--blue-light);
+      font-size: 0.85rem;
+      font-weight: 500;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+
+    .scroll-cta:hover { opacity: 0.75; }
+
+    .scroll-cta svg {
+      width: 16px;
+      height: 16px;
+      animation: bounce 1.8s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50%       { transform: translateY(4px); }
+    }
+
+    /* ── INTERVIEWS ── */
+    #interviews { background: rgba(255,255,255,0.025); }
+
+    .videos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+
+    .video-frame {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+
+    .video-frame:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow);
+    }
+
+    /* 16:9 ratio placeholder */
+    .video-placeholder {
+      position: relative;
+      width: 100%;
+      padding-top: 56.25%;
+      background: linear-gradient(135deg, #1e3a5f 0%, #1a202c 100%);
+    }
+
+    .video-placeholder .play-btn {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    .play-btn .play-circle {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: rgba(49, 130, 206, 0.2);
+      border: 2px solid rgba(49, 130, 206, 0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .play-btn .play-circle svg {
+      width: 22px;
+      height: 22px;
+      color: var(--blue-light);
+      margin-left: 3px;
+    }
+
+    .play-btn .play-label {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.45);
+      font-weight: 500;
+    }
+
+    .video-caption {
+      padding: 14px 18px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: rgba(255,255,255,0.85);
+      border-top: 1px solid var(--border);
+    }
+
+    .video-caption .video-tag {
+      font-size: 0.75rem;
+      font-weight: 400;
+      color: var(--blue-light);
+      display: block;
+      margin-top: 2px;
+    }
+
+    /* ── ENTREPRENEUR ── */
+    #entrepreneur .poster-wrapper {
+      display: flex;
+      justify-content: center;
+    }
+
+    .poster-frame {
+      position: relative;
+      width: 100%;
+      max-width: 520px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 2px dashed rgba(49, 130, 206, 0.4);
+      border-radius: var(--radius);
+      padding: 48px 32px;
+      text-align: center;
+      box-shadow: var(--shadow);
+    }
+
+    .poster-frame .poster-icon {
+      font-size: 3.5rem;
+      margin-bottom: 20px;
+      display: block;
+    }
+
+    .poster-frame h4 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .poster-frame p {
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.45);
+      max-width: 320px;
+      margin: 0 auto 24px;
+    }
+
+    .poster-frame .poster-label {
+      display: inline-block;
+      background: rgba(49, 130, 206, 0.15);
+      border: 1px solid rgba(49, 130, 206, 0.3);
+      color: var(--blue-light);
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 5px 14px;
+      border-radius: 6px;
+      letter-spacing: 0.5px;
+    }
+
+    .entrepreneur-text {
+      margin-top: 40px;
+      background: rgba(255, 255, 255, 0.04);
+      border-left: 3px solid var(--blue);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      padding: 24px 28px;
+    }
+
+    .entrepreneur-text p {
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.75);
+      line-height: 1.8;
+      margin-bottom: 12px;
+    }
+
+    .entrepreneur-text p:last-child { margin-bottom: 0; }
+
+    .entrepreneur-text strong { color: var(--white); }
+
+    /* ── JEUX & QUALITÉS ── */
+    #jeux { background: rgba(255,255,255,0.025); }
+
+    .jeux-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      align-items: start;
+    }
+
+    /* Tier List */
+    .tier-list { display: flex; flex-direction: column; gap: 8px; }
+
+    .tier-row {
+      display: flex;
+      align-items: stretch;
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .tier-badge {
       width: 48px;
-      height: 48px;
+      min-width: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+    }
+
+    .tier-s .tier-badge { background: #ff7675; }
+    .tier-a .tier-badge { background: #fdcb6e; color: #1a202c; }
+    .tier-b .tier-badge { background: #55efc4; color: #1a202c; }
+    .tier-c .tier-badge { background: #74b9ff; color: #1a202c; }
+    .tier-d .tier-badge { background: #a29bfe; }
+
+    .tier-items {
+      flex: 1;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--border);
+      border-left: none;
+      padding: 10px 14px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      align-items: center;
+    }
+
+    .tier-tag {
+      background: rgba(255,255,255,0.08);
+      border-radius: 4px;
+      padding: 3px 9px;
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: rgba(255,255,255,0.85);
+      white-space: nowrap;
+    }
+
+    /* Romain's games card */
+    .games-card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px 24px;
+      box-shadow: var(--shadow-sm);
+      height: 100%;
+    }
+
+    .games-card h4 {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .games-card h4 .icon {
+      width: 36px;
+      height: 36px;
       background: rgba(49, 130, 206, 0.15);
       border-radius: var(--radius-sm);
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-bottom: 20px;
-      font-size: 1.5rem;
+      font-size: 1rem;
     }
 
-    .card h4 {
-      font-size: 1.1rem;
-      font-weight: 700;
-      margin-bottom: 10px;
-      color: var(--white);
+    .games-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+
+    .games-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.75);
     }
 
-    .card p {
-      font-size: 0.9rem;
-      color: rgba(255, 255, 255, 0.6);
-      line-height: 1.7;
+    .games-list li::before {
+      content: '▸';
+      color: var(--blue);
+      font-size: 0.8rem;
+      margin-top: 2px;
+      flex-shrink: 0;
     }
 
-    /* ── Reflection Section ── */
-    .reflection {
-      padding: 60px 0 80px;
+    /* ── PAUSE CONVIVIALE ── */
+    #pause {
+      text-align: center;
     }
 
-    .reflection-block {
-      background: var(--glass-bg);
-      border: 1px solid var(--glass-border);
+    .pause-card {
+      background: linear-gradient(135deg, rgba(49, 130, 206, 0.18) 0%, rgba(43, 108, 176, 0.12) 100%);
+      border: 1px solid rgba(49, 130, 206, 0.35);
       border-radius: var(--radius);
-      padding: 48px 40px;
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
+      padding: 56px 32px;
       box-shadow: var(--shadow);
-      position: relative;
-      overflow: hidden;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
     }
 
-    .reflection-block::before {
-      content: '❝';
-      position: absolute;
-      top: -10px;
-      left: 32px;
-      font-size: 7rem;
-      color: rgba(49, 130, 206, 0.12);
-      font-family: Georgia, serif;
+    .pause-emojis {
+      font-size: 3rem;
+      margin-bottom: 24px;
+      display: block;
       line-height: 1;
-      user-select: none;
     }
 
-    .reflection-block p {
-      font-size: clamp(0.95rem, 2.5vw, 1.05rem);
-      color: rgba(255, 255, 255, 0.8);
-      line-height: 1.85;
-      margin-bottom: 18px;
-      position: relative;
+    .pause-card h3 {
+      font-size: clamp(1.5rem, 4vw, 2.2rem);
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      margin-bottom: 14px;
     }
 
-    .reflection-block p:last-child {
-      margin-bottom: 0;
+    .pause-card .pause-desc {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.65);
+      max-width: 440px;
+      margin: 0 auto 28px;
     }
 
-    .reflection-block strong {
-      color: var(--white);
+    .pause-items {
+      display: inline-flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+    }
+
+    .pause-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 100px;
+      padding: 10px 22px;
+      font-size: 0.95rem;
       font-weight: 600;
     }
 
-    .reflection-block .highlight {
-      color: var(--blue-light);
-      font-weight: 500;
-    }
-
-    /* ── Footer ── */
+    /* ── FOOTER ── */
     footer {
-      border-top: 1px solid var(--glass-border);
-      padding: 32px 0;
+      border-top: 1px solid var(--border);
+      padding: 28px 0;
       text-align: center;
     }
 
     footer p {
-      font-size: 0.85rem;
-      color: rgba(255, 255, 255, 0.35);
-      letter-spacing: 0.3px;
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.3);
     }
 
-    footer p span {
-      color: var(--blue);
-      font-weight: 500;
-    }
+    footer p span { color: var(--blue); font-weight: 500; }
 
-    /* ── Responsive ── */
-    @media (max-width: 600px) {
-      .hero {
-        padding: 64px 0 56px;
-      }
+    /* ── RESPONSIVE ── */
+    @media (max-width: 640px) {
+      nav ul { display: none; }
 
-      .cards-grid {
+      .jeux-grid {
         grid-template-columns: 1fr;
       }
 
-      .reflection-block {
-        padding: 36px 24px;
+      .videos-grid {
+        grid-template-columns: 1fr;
       }
 
-      .reflection-block::before {
-        font-size: 5rem;
-      }
+      #accueil { padding: 64px 0 56px; }
+
+      .pause-card { padding: 40px 20px; }
     }
   </style>
 </head>
 <body>
 
-  <!-- ── HEADER ── -->
-  <header>
+  <!-- ── NAV ── -->
+  <nav>
     <div class="container">
-      <h1>Le <span>Job Entrepreneur</span></h1>
-      <p class="subtitle">Élective Se Connaître&nbsp;|&nbsp;Centrale Lille</p>
+      <span class="nav-brand">Forum : <span>Job Entrepreneur</span></span>
+      <ul>
+        <li><a href="#accueil">Accueil</a></li>
+        <li><a href="#interviews">Interviews</a></li>
+        <li><a href="#entrepreneur">Entrepreneur ?</a></li>
+        <li><a href="#jeux">Jeux &amp; Qualités</a></li>
+        <li><a href="#pause">Pause 🥞</a></li>
+      </ul>
     </div>
-  </header>
+  </nav>
 
-  <!-- ── HERO ── -->
-  <section class="hero">
+  <!-- ── ACCUEIL ── -->
+  <section id="accueil">
     <div class="container">
-      <div class="hero-tag">Profil · Job Entrepreneur</div>
-      <h2>L'entrepreneuriat commence par la <em>découverte de soi-même</em></h2>
-      <p class="hero-desc">
-        Comprendre qui tu es, ce qui te motive et ce dont tu es capable, c'est le socle de toute ambition entrepreneuriale durable.
+      <div class="badge">
+        <span>📅</span>
+        <span>Forum Élective · 10 Avril 2025</span>
+      </div>
+      <h1>Forum : <span>Job Entrepreneur</span></h1>
+      <p class="hero-text">
+        Découvre comment l'entrepreneuriat de carrière s'aligne avec la connaissance de soi.
+        Un stand interactif pour explorer le profil <strong>Job Entrepreneur</strong> de l'électif <em>Se Connaître</em>.
       </p>
-      <a href="#competences" class="hero-cta">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+      <p class="hero-text">
+        Viens nous retrouver pour discuter, jouer et comprendre ce que signifie vraiment entreprendre sa vie professionnelle !
+      </p>
+
+      <div class="event-info">
+        <div class="event-chip">
+          <span class="chip-icon">📅</span>
+          <div>
+            <span class="chip-label">Date</span>
+            <strong>10 Avril 2025</strong>
+          </div>
+        </div>
+        <div class="event-chip">
+          <span class="chip-icon">📍</span>
+          <div>
+            <span class="chip-label">Lieu</span>
+            <strong>Salle à préciser</strong>
+          </div>
+        </div>
+        <div class="event-chip">
+          <span class="chip-icon">🏫</span>
+          <div>
+            <span class="chip-label">École</span>
+            <strong>Centrale Lille</strong>
+          </div>
+        </div>
+      </div>
+
+      <a href="#interviews" class="scroll-cta">
+        Explorer le stand
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
         </svg>
-        Découvrir les compétences
       </a>
     </div>
   </section>
 
-  <!-- ── SKILLS ── -->
-  <section class="skills" id="competences">
+  <!-- ── INTERVIEWS ── -->
+  <section id="interviews" class="section">
     <div class="container">
-      <div class="section-title">
-        <h3>Compétences Clés</h3>
-        <p>Les trois piliers qui définissent la posture du Job Entrepreneur</p>
-      </div>
+      <div class="section-label">🎥 Témoignages</div>
+      <h2 class="section-title">Interviews de Marin</h2>
+      <p class="section-sub">Des entrepreneurs partagent leur parcours et leur vision</p>
       <div class="divider"></div>
-      <div class="cards-grid">
 
-        <div class="card">
-          <div class="card-icon">🎯</div>
-          <h4>Autonomie</h4>
-          <p>Piloter ses projets avec détermination. Prendre des décisions de manière indépendante et assumer pleinement la responsabilité de ses actions et de ses résultats.</p>
+      <div class="videos-grid">
+
+        <div class="video-frame">
+          <div class="video-placeholder">
+            <div class="play-btn">
+              <div class="play-circle">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M8 5v14l11-7z"/>
+                </svg>
+              </div>
+              <span class="play-label">Vidéo à venir</span>
+            </div>
+          </div>
+          <div class="video-caption">
+            Interview #1
+            <span class="video-tag">Par Marin · Job Entrepreneur</span>
+          </div>
         </div>
 
-        <div class="card">
-          <div class="card-icon">💡</div>
-          <h4>Intraprenariat</h4>
-          <p>Innover et créer de la valeur au sein d'une organisation. Adopter un esprit d'entrepreneur tout en évoluant dans une structure existante pour la faire progresser.</p>
+        <div class="video-frame">
+          <div class="video-placeholder">
+            <div class="play-btn">
+              <div class="play-circle">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M8 5v14l11-7z"/>
+                </svg>
+              </div>
+              <span class="play-label">Vidéo à venir</span>
+            </div>
+          </div>
+          <div class="video-caption">
+            Interview #2
+            <span class="video-tag">Par Marin · Job Entrepreneur</span>
+          </div>
         </div>
 
-        <div class="card">
-          <div class="card-icon">🔭</div>
-          <h4>Vision Stratégique</h4>
-          <p>Aligner ses forces personnelles avec les opportunités du marché. Développer une capacité à anticiper, à planifier et à transformer une vision en actions concrètes.</p>
+        <div class="video-frame">
+          <div class="video-placeholder">
+            <div class="play-btn">
+              <div class="play-circle">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M8 5v14l11-7z"/>
+                </svg>
+              </div>
+              <span class="play-label">Vidéo à venir</span>
+            </div>
+          </div>
+          <div class="video-caption">
+            Interview #3
+            <span class="video-tag">Par Marin · Job Entrepreneur</span>
+          </div>
         </div>
 
       </div>
     </div>
   </section>
 
-  <!-- ── REFLECTION ── -->
-  <section class="reflection" id="reflexion">
+  <!-- ── C'EST QUOI UN ENTREPRENEUR ? ── -->
+  <section id="entrepreneur" class="section">
     <div class="container">
-      <div class="section-title">
-        <h3>Une Posture de Vie</h3>
-        <p>Au-delà du métier, une manière d'être et d'agir</p>
-      </div>
+      <div class="section-label">🖼️ Affiche A3</div>
+      <h2 class="section-title">C'est quoi un Entrepreneur ?</h2>
+      <p class="section-sub">Notre affiche résume l'essentiel du profil Job Entrepreneur</p>
       <div class="divider"></div>
-      <div class="reflection-block">
+
+      <div class="poster-wrapper">
+        <div class="poster-frame">
+          <span class="poster-icon">🗂️</span>
+          <h4>Affiche A3 – Job Entrepreneur</h4>
+          <p>Espace réservé pour l'affichage de votre poster A3. Remplacez cette zone par une image ou un PDF de votre affiche.</p>
+          <span class="poster-label">Format A3 · Portrait</span>
+        </div>
+      </div>
+
+      <div class="entrepreneur-text">
         <p>
-          Le <strong>Job Entrepreneur</strong> n'est pas simplement un métier ou un titre que l'on affiche sur un CV.
-          C'est avant tout <span class="highlight">une posture de vie</span> : celle de quelqu'un qui prend en main son parcours professionnel
-          avec la même énergie, la même créativité et le même sens des responsabilités qu'un entrepreneur créant sa propre entreprise.
+          Un <strong>entrepreneur</strong> est avant tout quelqu'un qui identifie une opportunité et prend le risque de la saisir,
+          en mobilisant ses ressources, sa créativité et son réseau pour créer de la valeur.
         </p>
         <p>
-          Cette posture repose sur une fondation essentielle : <strong>la connaissance de soi</strong>.
-          Identifier ses valeurs, comprendre ses motivations profondes, reconnaître ses forces et accepter ses zones de développement —
-          autant de leviers qui permettent de construire une carrière authentique et alignée avec qui l'on est vraiment.
+          Le <strong>Job Entrepreneur</strong> va plus loin : c'est une posture que l'on peut adopter dans n'importe quel contexte —
+          salarié, indépendant ou fondateur — dès lors que l'on traite sa carrière comme un projet entrepreneurial à part entière.
         </p>
-        <p>
-          Dans un monde professionnel en constante évolution, <span class="highlight">se connaître, c'est se donner les moyens d'agir avec clarté</span>,
-          de saisir les bonnes opportunités et d'engager les autres autour d'une vision qui fait sens.
-          L'élective <em>Se Connaître</em> à Centrale Lille explore précisément ce lien indissociable entre identité personnelle et ambition professionnelle.
+      </div>
+    </div>
+  </section>
+
+  <!-- ── JEUX & QUALITÉS ── -->
+  <section id="jeux" class="section">
+    <div class="container">
+      <div class="section-label">🎮 Activités</div>
+      <h2 class="section-title">Jeux &amp; Qualités</h2>
+      <p class="section-sub">Teste ton profil entrepreneurial et découvre tes forces</p>
+      <div class="divider"></div>
+
+      <div class="jeux-grid">
+
+        <!-- Tier List -->
+        <div>
+          <h3 style="font-size:1rem;font-weight:700;margin-bottom:18px;color:rgba(255,255,255,0.85);">
+            🏆 Tier List des qualités essentielles
+          </h3>
+          <div class="tier-list">
+            <div class="tier-row tier-s">
+              <div class="tier-badge">S</div>
+              <div class="tier-items">
+                <span class="tier-tag">Résilience</span>
+                <span class="tier-tag">Vision</span>
+                <span class="tier-tag">Prise d'initiative</span>
+              </div>
+            </div>
+            <div class="tier-row tier-a">
+              <div class="tier-badge">A</div>
+              <div class="tier-items">
+                <span class="tier-tag">Adaptabilité</span>
+                <span class="tier-tag">Leadership</span>
+                <span class="tier-tag">Créativité</span>
+              </div>
+            </div>
+            <div class="tier-row tier-b">
+              <div class="tier-badge">B</div>
+              <div class="tier-items">
+                <span class="tier-tag">Communication</span>
+                <span class="tier-tag">Rigueur</span>
+                <span class="tier-tag">Empathie</span>
+              </div>
+            </div>
+            <div class="tier-row tier-c">
+              <div class="tier-badge">C</div>
+              <div class="tier-items">
+                <span class="tier-tag">Gestion du temps</span>
+                <span class="tier-tag">Networking</span>
+              </div>
+            </div>
+            <div class="tier-row tier-d">
+              <div class="tier-badge">D</div>
+              <div class="tier-items">
+                <span class="tier-tag">Expertise technique</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Romain's games -->
+        <div class="games-card">
+          <h4>
+            <span class="icon">🎲</span>
+            Les jeux de Romain
+          </h4>
+          <ul class="games-list">
+            <li>Jeu de cartes : associe tes qualités à des profils entrepreneuriaux</li>
+            <li>Quiz interactif : quel type d'entrepreneur es-tu ?</li>
+            <li>Défi créatif : résous un vrai problème en équipe en 5 minutes</li>
+            <li>Roue des compétences : identifie tes points forts et axes de progression</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PAUSE CONVIVIALE ── -->
+  <section id="pause" class="section">
+    <div class="container">
+      <div class="pause-card">
+        <span class="pause-emojis">🥞 ☕</span>
+        <h3>Pause Conviviale</h3>
+        <p class="pause-desc">
+          Venez souffler et discuter autour d'une petite douceur !
+          On vous attend pour échanger sur l'entrepreneuriat dans une ambiance détendue.
         </p>
+        <div class="pause-items">
+          <span class="pause-item">🥞 Crêpes offertes</span>
+          <span class="pause-item">☕ Café offert</span>
+        </div>
       </div>
     </div>
   </section>
