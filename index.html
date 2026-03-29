@@ -1,297 +1,529 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Landing Page du projet Se Connaître - Le Job Entrepreneur" />
-  <title>Le Job Entrepreneur | Se Connaître</title>
-  <style>
-    :root {
-      --midnight-blue: #1a202c;
-      --pure-white: #ffffff;
-      --electric-blue: #3182ce;
-      --text-soft: #dbe5f3;
-      --card-bg: rgba(255, 255, 255, 0.11);
-      --card-border: rgba(255, 255, 255, 0.22);
-      --shadow-soft: 0 12px 30px rgba(15, 23, 42, 0.25);
-      --radius-lg: 20px;
-      --radius-md: 14px;
-      --max-width: 1120px;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html,
-    body {
-      width: 100%;
-      min-height: 100%;
-    }
-
-    body {
-      font-family: "Inter", "Roboto", "Segoe UI", sans-serif;
-      color: var(--pure-white);
-      line-height: 1.6;
-      background:
-        radial-gradient(circle at 12% 16%, rgba(49, 130, 206, 0.34), transparent 34%),
-        radial-gradient(circle at 85% 8%, rgba(255, 255, 255, 0.08), transparent 28%),
-        linear-gradient(140deg, #101826 0%, var(--midnight-blue) 50%, #0f172a 100%);
-      background-attachment: fixed;
-      padding: 18px;
-      -webkit-font-smoothing: antialiased;
-      text-rendering: optimizeLegibility;
-      overflow-x: hidden;
-    }
-
-    .container {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      display: grid;
-      gap: 18px;
-    }
-
-    .glass {
-      background: var(--card-bg);
-      border: 1px solid var(--card-border);
-      border-radius: var(--radius-lg);
-      box-shadow: var(--shadow-soft);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-    }
-
-    .header {
-      padding: 28px 24px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .header::before {
-      content: "";
-      position: absolute;
-      top: -60px;
-      right: -60px;
-      width: 190px;
-      height: 190px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(49, 130, 206, 0.35), transparent 68%);
-      filter: blur(6px);
-      pointer-events: none;
-    }
-
-    .header h1 {
-      font-size: clamp(1.8rem, 4vw, 2.7rem);
-      font-weight: 700;
-      letter-spacing: 0.4px;
-      line-height: 1.2;
-      max-width: 18ch;
-    }
-
-    .subtitle {
-      margin-top: 10px;
-      font-size: clamp(0.95rem, 2.2vw, 1.08rem);
-      color: var(--text-soft);
-    }
-
-    .hero {
-      padding: clamp(24px, 4vw, 44px);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero::after {
-      content: "";
-      position: absolute;
-      inset: auto auto -120px -110px;
-      width: 300px;
-      height: 300px;
-      background: radial-gradient(circle, rgba(49, 130, 206, 0.42), transparent 70%);
-      filter: blur(8px);
-      pointer-events: none;
-      z-index: 0;
-    }
-
-    .hero p {
-      position: relative;
-      z-index: 1;
-      font-size: clamp(1.35rem, 4.2vw, 2.2rem);
-      font-weight: 600;
-      line-height: 1.25;
-      max-width: 24ch;
-      text-wrap: balance;
-    }
-
-    .hero strong {
-      color: #8dc8ff;
-      font-weight: 700;
-    }
-
-    .section {
-      padding: 22px;
-    }
-
-    .section h2 {
-      font-size: clamp(1.15rem, 3vw, 1.5rem);
-      margin-bottom: 14px;
-      color: #e8f2ff;
-      font-weight: 600;
-    }
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 14px;
-    }
-
-    .card {
-      border-radius: var(--radius-md);
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.16);
-      padding: 18px;
-      box-shadow: 0 8px 20px rgba(2, 8, 23, 0.12);
-      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
-      min-height: 170px;
-    }
-
-    .card:hover {
-      transform: translateY(-4px);
-      border-color: rgba(49, 130, 206, 0.75);
-      box-shadow: 0 14px 24px rgba(2, 8, 23, 0.2);
-    }
-
-    .card h3 {
-      font-size: 1.05rem;
-      color: #bee3f8;
-      margin-bottom: 8px;
-      font-weight: 600;
-    }
-
-    .card p {
-      color: #edf2f7;
-      font-size: 0.96rem;
-    }
-
-    .reflection {
-      padding: clamp(20px, 3vw, 30px);
-    }
-
-    .reflection p {
-      color: #edf2f7;
-      max-width: 70ch;
-      font-size: clamp(0.98rem, 2vw, 1.06rem);
-    }
-
-    .footer {
-      text-align: center;
-      color: #d4deea;
-      font-size: 0.92rem;
-      padding: 4px 10px 14px;
-    }
-
-    @media (max-width: 880px) {
-      .cards {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-    }
-
-    @media (max-width: 620px) {
-      body {
-        padding: 12px;
-      }
-
-      .container {
-        gap: 12px;
-      }
-
-      .header,
-      .hero,
-      .section,
-      .reflection {
-        padding: 18px;
-      }
-
-      .cards {
-        grid-template-columns: 1fr;
-      }
-
-      .card {
-        min-height: auto;
-      }
-    }
-
-    @media (prefers-reduced-motion: no-preference) {
-      .reveal {
-        opacity: 0;
-        transform: translateY(12px);
-        animation: reveal 680ms ease forwards;
-      }
-
-      .delay-1 {
-        animation-delay: 120ms;
-      }
-
-      .delay-2 {
-        animation-delay: 230ms;
-      }
-
-      .delay-3 {
-        animation-delay: 340ms;
-      }
-
-      @keyframes reveal {
-        to {
-          opacity: 1;
-          transform: translateY(0);
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forum Job Entrepreneur - Centrale Lille</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-      }
-    }
-  </style>
+
+        :root {
+            --bg-primary: #ffffff;
+            --text-primary: #1a1a1a;
+            --text-secondary: #6e6e73;
+            --accent: #0071e3;
+            --shadow-light: 0 4px 20px rgba(0, 0, 0, 0.05);
+            --shadow-hover: 0 12px 32px rgba(0, 0, 0, 0.12);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* ==================== NAVIGATION ==================== */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        nav .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .logo {
+            font-size: 1.3rem;
+            font-weight: 600;
+            letter-spacing: -0.5px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+        }
+
+        /* ==================== HERO SECTION ==================== */
+        .hero {
+            margin-top: 60px;
+            padding: 120px 2rem;
+            text-align: center;
+            animation: fadeInHero 0.8s ease;
+        }
+
+        @keyframes fadeInHero {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 8vw, 4rem);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            letter-spacing: -1px;
+        }
+
+        .badge {
+            display: inline-block;
+            background: rgba(0, 113, 227, 0.08);
+            color: var(--accent);
+            padding: 0.5rem 1.2rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 2rem;
+            animation: fadeInBadge 0.8s ease 0.2s both;
+        }
+
+        @keyframes fadeInBadge {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--accent);
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            animation: fadeInButton 0.8s ease 0.4s both;
+        }
+
+        @keyframes fadeInButton {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .cta-button:hover {
+            background-color: #0056b3;
+            box-shadow: var(--shadow-hover);
+            transform: translateY(-2px);
+        }
+
+        /* ==================== INTRO SECTION ==================== */
+        .intro {
+            max-width: 900px;
+            margin: 80px auto;
+            padding: 0 2rem;
+            text-align: center;
+        }
+
+        .intro p {
+            font-size: clamp(1.1rem, 2vw, 1.4rem);
+            color: var(--text-secondary);
+            line-height: 1.8;
+            font-weight: 300;
+            letter-spacing: 0.3px;
+        }
+
+        /* ==================== INTERVIEWS SECTION ==================== */
+        .interviews {
+            max-width: 1200px;
+            margin: 100px auto;
+            padding: 0 2rem;
+        }
+
+        .section-title {
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 4rem;
+            letter-spacing: -0.5px;
+        }
+
+        .interviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 5rem;
+        }
+
+        .card {
+            background: var(--bg-primary);
+            border-radius: 16px;
+            padding: 2.5rem 2rem;
+            box-shadow: var(--shadow-light);
+            transition: all 0.4s ease;
+            animation: fadeInCard 0.8s ease;
+        }
+
+        .card:nth-child(1) { animation-delay: 0.1s; }
+        .card:nth-child(2) { animation-delay: 0.2s; }
+        .card:nth-child(3) { animation-delay: 0.3s; }
+
+        @keyframes fadeInCard {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .card:hover {
+            box-shadow: var(--shadow-hover);
+            transform: translateY(-8px);
+        }
+
+        .card-photo-main {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin-bottom: 1.5rem;
+        }
+
+        .card-logo-footer {
+            width: 100%;
+            height: auto;
+            max-height: 100px;
+            object-fit: contain;
+            border-radius: 12px;
+            background: rgba(0, 113, 227, 0.04);
+            padding: 15px;
+            margin-top: 1.5rem;
+            display: block;
+        }
+
+        .card h3 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 0.8rem;
+            letter-spacing: -0.3px;
+        }
+
+        .card .role {
+            color: var(--accent);
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+        }
+
+        .card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        /* ==================== GAMES SECTION ==================== */
+        .games {
+            max-width: 1200px;
+            margin: 100px auto;
+            padding: 4rem 2rem;
+            text-align: center;
+            background: rgba(0, 113, 227, 0.04);
+            border-radius: 20px;
+            animation: fadeInSection 0.8s ease;
+        }
+
+        @keyframes fadeInSection {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .games-icon {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .games p {
+            font-size: 1.3rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.8;
+            font-weight: 300;
+        }
+
+        /* ==================== FOOD SECTION ==================== */
+        .food {
+            margin: 100px auto;
+            padding: 4rem 3rem;
+            max-width: 900px;
+            background: linear-gradient(135deg, rgba(0, 113, 227, 0.12) 0%, rgba(0, 113, 227, 0.08) 100%);
+            text-align: center;
+            animation: fadeInFood 0.8s ease;
+            border-radius: 20px;
+            box-shadow: var(--shadow-light);
+        }
+
+        @keyframes fadeInFood {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .food p {
+            font-size: 1.6rem;
+            color: var(--text-primary);
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            line-height: 1.8;
+        }
+
+        /* ==================== FOOTER ==================== */
+        footer {
+            margin-top: 100px;
+            padding: 3rem 2rem;
+            background: var(--bg-primary);
+            border-top: 1px solid rgba(0, 0, 0, 0.05);
+            text-align: center;
+        }
+
+        footer p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            font-weight: 400;
+            letter-spacing: 0.3px;
+        }
+
+        /* ==================== RESPONSIVE ==================== */
+        @media (max-width: 768px) {
+            nav .nav-container {
+                padding: 0.75rem 1rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+            }
+
+            nav a {
+                font-size: 0.85rem;
+            }
+
+            .hero {
+                padding: 80px 1.5rem;
+                margin-top: 50px;
+            }
+
+            .hero h1 {
+                margin-bottom: 1rem;
+            }
+
+            .intro {
+                margin: 60px auto;
+            }
+
+            .interviews {
+                margin: 60px auto;
+            }
+
+            .section-title {
+                margin-bottom: 2rem;
+            }
+
+            .interviews-grid {
+                gap: 1.5rem;
+            }
+
+            .card {
+                padding: 2rem 1.5rem;
+            }
+
+            .games {
+                margin: 60px auto;
+                padding: 2.5rem 1.5rem;
+            }
+
+            .games-icon {
+                font-size: 3rem;
+            }
+
+            .games p {
+                font-size: 1rem;
+            }
+
+            footer {
+                padding: 2rem 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav ul {
+                display: none;
+            }
+
+            .hero {
+                padding: 60px 1rem;
+                margin-top: 50px;
+            }
+
+            .intro {
+                margin: 40px auto;
+            }
+
+            .interviews-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .card:hover {
+                transform: translateY(-4px);
+            }
+        }
+    </style>
 </head>
 <body>
-  <main class="container" aria-label="Landing Page Le Job Entrepreneur">
-    <header class="header glass reveal">
-      <h1>Le Job Entrepreneur</h1>
-      <p class="subtitle">Élective Se Connaître | Centrale Lille</p>
-    </header>
+    <!-- ==================== NAVIGATION ==================== -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">Job Entrepreneur</div>
+            <ul>
+                <li><a href="#hero">Accueil</a></li>
+                <li><a href="#interviews">Rencontres</a></li>
+                <li><a href="#games">Jeux</a></li>
+            </ul>
+        </div>
+    </nav>
 
-    <section class="hero glass reveal delay-1" aria-label="Phrase d'accroche">
-      <p>L'entrepreneuriat commence par la <strong>découverte de soi-même</strong>.</p>
+    <!-- ==================== HERO SECTION ==================== -->
+    <section class="hero" id="hero">
+        <div class="badge">10 Avril 2025 • Centrale Lille</div>
+        <h1>Forum : Job Entrepreneur</h1>
+        <a href="#interviews" class="cta-button">Découvrir le projet</a>
     </section>
 
-    <section class="section glass reveal delay-2" aria-label="Competences">
-      <h2>Compétences clés</h2>
-      <div class="cards">
-        <article class="card">
-          <h3>Autonomie</h3>
-          <p>Piloter ses projets avec détermination.</p>
-        </article>
-
-        <article class="card">
-          <h3>Intraprenariat</h3>
-          <p>Innover et créer de la valeur au sein d'une organisation.</p>
-        </article>
-
-        <article class="card">
-          <h3>Vision Stratégique</h3>
-          <p>Aligner ses forces personnelles avec les opportunités du marché.</p>
-        </article>
-      </div>
+    <!-- ==================== INTRO SECTION ==================== -->
+    <section class="intro">
+        <p>
+            Bienvenue dans l'univers de l'entrepreneuriat. Une posture exigeante qui demande audace, 
+            persévérance et une vision claire. Rencontrez les entrepreneurs qui ont osé créer, reprendre 
+            et transformer. Découvrez les leviers du succès, les défis surmontés et la passion qui anime 
+            ceux qui construisent leur propre chemin.
+        </p>
     </section>
 
-    <section class="reflection glass reveal delay-3" aria-label="Réflexion">
-      <h2>Réflexion</h2>
-      <p>
-        Le Job Entrepreneur n'est pas juste un métier, c'est une posture de vie.
-        C'est la capacité à se connaître, à miser sur ses forces et à transformer
-        cette clarté intérieure en projets à impact, dans un monde en mouvement.
-      </p>
+    <!-- ==================== INTERVIEWS SECTION ==================== -->
+    <section class="interviews" id="interviews">
+        <h2 class="section-title">Nos Entretiens</h2>
+        <div class="interviews-grid">
+            <!-- Card 1 -->
+            <div class="card">
+                <img src="alexandre_pecourt.jpeg" alt="Alexandre Pécourt" class="card-photo-main">
+                <h3>Alexandre Pécourt</h3>
+                <div class="role">Créateur de Bureau d'Étude</div>
+                <p>
+                    Fondateur et dirigeant d'<strong>Energelio</strong>, bureau d'étude pionnier dans 
+                    l'étude des bâtiments passifs en France. Une expertise reconnue au service de la 
+                    construction durable.
+                </p>
+                <img src="energelio_logo.jpeg" alt="Logo Energelio" class="card-logo-footer">
+            </div>
+
+            <!-- Card 2 -->
+            <div class="card">
+                <img src="adeline_verstean.jpeg" alt="Adeline Verstean" class="card-photo-main">
+                <h3>Adeline Verstean</h3>
+                <div class="role">Fondatrice</div>
+                <p>
+                    Fondatrice de <strong>COALESCENCES</strong>, cabinet de conseil et de formation. 
+                    Un projet bâti sur l'innovation et l'accompagnement des organisations vers le changement.
+                </p>
+                <img src="coalescences_logo.jpeg" alt="Logo Coalescences" class="card-logo-footer">
+            </div>
+
+            <!-- Card 3 -->
+            <div class="card">
+                <img src="loic_rivoallan.jpeg" alt="Loïc Rivoallan" class="card-photo-main">
+                <h3>Loïc Rivoallan</h3>
+                <div class="role">Repreneur</div>
+                <p>
+                    Président de <strong>Ponceblanc Échantillonnage</strong>, fabricant de catalogues 
+                    d'échantillonnage pour magasins. Une belle aventure de reprise entrepreneuriale.
+                </p>
+                <img src="ponceblanc _echantillonnage.jpeg" alt="Logo Ponceblanc Échantillonnage" class="card-logo-footer">
+            </div>
+        </div>
     </section>
 
-    <footer class="footer">
-      Projet réalisé par Matheus - 2026
+    <!-- ==================== GAMES SECTION ==================== -->
+    <section class="games" id="games">
+        <div class="games-icon">🎮</div>
+        <h2 class="section-title">Jeux Interactifs</h2>
+        <p>
+            Venez découvrir les différents jeux interactifs que nous avons préparés pour vous ! 
+            Une expérience ludique pour mieux comprendre l'univers entrepreneurial.
+        </p>
+    </section>
+
+    <!-- ==================== FOOD SECTION ==================== -->
+    <section class="food">
+        <p>☕ Pause Conviviale : Crêpes + Café offerts sur notre stand ☕</p>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer>
+        <p>&copy; Centrale Lille — 2025</p>
     </footer>
-  </main>
 </body>
 </html>
