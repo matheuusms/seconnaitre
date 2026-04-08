@@ -173,6 +173,46 @@
             font-weight: 300;
             letter-spacing: 0.3px;
         }
+        /* ==================== STAND SECTION ==================== */
+        .stand-section {
+            max-width: 1200px;
+            margin: 100px auto;
+            padding: 0 2rem;
+            text-align: center;
+            animation: fadeInSection 0.8s ease;
+        }
+
+        .stand-section p {
+            font-size: 1.4rem;
+            color: var(--text-secondary);
+            margin-bottom: 3rem;
+            font-weight: 400;
+        }
+
+        .stand-section strong {
+            color: var(--accent);
+        }
+
+        .stand-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            justify-content: center;
+        }
+
+        .stand-image {
+            width: 100%;
+            height: 350px;
+            object-fit: cover; /* Garante que as fotos fiquem do mesmo tamanho sem distorcer */
+            border-radius: 16px;
+            box-shadow: var(--shadow-light);
+            transition: all 0.4s ease;
+        }
+
+        .stand-image:hover {
+            box-shadow: var(--shadow-hover);
+            transform: translateY(-6px);
+        }
 
         /* ==================== INTERVIEWS SECTION ==================== */
         .interviews {
@@ -469,6 +509,7 @@
                 <li><a href="#hero">Accueil</a></li>
                 <li><a href="#interviews">Rencontres</a></li>
                 <li><a href="#games">Jeux</a></li>
+                <li><a href="#stand">Notre Stand</a></li>
             </ul>
         </div>
     </nav>
@@ -496,6 +537,17 @@
             <img src="Qu’est-ce qu’un ENTRPRENEUR -3.png" alt="Affiche : Tout sur l'entrepreneuriat" class="poster-image">
         </div>
     </section>
+            <!-- ==================== STAND SECTION ==================== -->
+
+        <section class="stand-section" id="stand">
+        <h2 class="section-title">Notre Stand</h2>
+        <p>On vous attend nombreux à la salle <strong>B014</strong> !</p>
+        <div class="stand-gallery">
+            <img src="img1.jpeg" alt="Ambiance de notre stand en salle B014" class="stand-image">
+            <img src="img2.jpeg" alt="Échanges sur notre stand" class="stand-image">
+        </div>
+    </section>
+    
     <!-- ==================== INTERVIEWS SECTION ==================== -->
     <section class="interviews" id="interviews">
         <h2 class="section-title">Nos Entretiens</h2>
