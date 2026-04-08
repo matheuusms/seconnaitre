@@ -348,6 +348,33 @@
             letter-spacing: 0.3px;
         }
 
+        .poster-container {
+            background: var(--bg-primary);
+            border-radius: 20px;
+            padding: 2rem; /* Un peu plus d'espace autour de l'image pour bien l'encadrer */
+            box-shadow: var(--shadow-light);
+            transition: all 0.4s ease;
+            border: 1px solid rgba(0, 0, 0, 0.08); /* Une bordure très discrète */
+            display: flex;
+            justify-content: center; /* Centre l'image horizontalement */
+            align-items: center;
+        }
+
+        .poster-container:hover {
+            box-shadow: var(--shadow-hover);
+            transform: translateY(-6px);
+        }
+
+        .poster-image {
+            width: 100%;
+            max-width: 800px; /* Empêche l'image de devenir trop large */
+            max-height: 75vh; /* Limite la hauteur à 75% de la taille de l'écran */
+            border-radius: 8px; /* Des coins légèrement arrondis pour l'affiche */
+            display: block;
+            object-fit: contain; /* Assure que toute l'affiche est visible sans être coupée ni déformée */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Une ombre propre à l'affiche pour lui donner un effet "cadre" */
+        }
+
         /* ==================== RESPONSIVE ==================== */
         @media (max-width: 768px) {
             nav .nav-container {
@@ -448,7 +475,7 @@
 
     <!-- ==================== HERO SECTION ==================== -->
     <section class="hero" id="hero">
-        <div class="badge">10 Avril 2025 • Centrale Lille</div>
+        <div class="badge">8 Avril 2026 • Centrale Lille</div>
         <h1>Forum : Job Entrepreneur</h1>
         <a href="#interviews" class="cta-button">Découvrir le projet</a>
     </section>
@@ -462,7 +489,13 @@
             ceux qui construisent leur propre chemin.
         </p>
     </section>
-
+        <!-- ==================== INTRO SECTION ==================== -->
+         <section class="poster-section" id="affiche">
+        <h2 class="section-title">Tout sur l'entrepreneuriat</h2>
+        <div class="poster-container">
+            <img src="Qu’est-ce qu’un ENTRPRENEUR -3.png" alt="Affiche : Tout sur l'entrepreneuriat" class="poster-image">
+        </div>
+    </section>
     <!-- ==================== INTERVIEWS SECTION ==================== -->
     <section class="interviews" id="interviews">
         <h2 class="section-title">Nos Entretiens</h2>
@@ -507,15 +540,17 @@
     </section>
 
     <!-- ==================== GAMES SECTION ==================== -->
-    <section class="games" id="games">
+<section class="games" id="games">
         <div class="games-icon">🎮</div>
         <h2 class="section-title">Jeux Interactifs</h2>
         <p>
             Venez découvrir les différents jeux interactifs que nous avons préparés pour vous ! 
             Une expérience ludique pour mieux comprendre l'univers entrepreneurial.
         </p>
+        <div style="margin-top: 2.5rem;">
+            <a href="https://tiermaker.com/create/lentrepreneuriat-19361062" target="_blank" rel="noopener noreferrer" class="cta-button">Faire la Tier List</a>
+        </div>
     </section>
-
     <!-- ==================== FOOD SECTION ==================== -->
     <section class="food">
         <p>☕ Pause Conviviale : Crêpes + Café offerts sur notre stand ☕</p>
